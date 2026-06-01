@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(tseek
     src/main.cpp
     src/TSeekFile.cpp
+    src/EngineV1.cpp
 )
 
 target_include_directories(tseek PRIVATE src)
