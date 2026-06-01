@@ -1,0 +1,7 @@
+# Build output
+build/
+tseek
+
+# Vim swap files
+*.swp
+*.swo
