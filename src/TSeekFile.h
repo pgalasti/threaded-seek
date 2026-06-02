@@ -5,6 +5,7 @@
 #include <string>
 #include <exception>
 #include <optional>
+#include <list>
 
 namespace TSeek {
 
@@ -24,8 +25,9 @@ namespace TSeek {
     bool isFound() const;
     
   private:
-    
-    void search(); 
+    using DirectoryList = std::list<std::string>;
+
+    DirectoryList search(); 
     
     enum SearchState {
 
@@ -40,6 +42,7 @@ namespace TSeek {
     SearchParams searchParams            {};
     std::string path                     {};
     std::optional<std::string> lineFound {};
+    bool isDirectory                     {false}; // May define as an enum type later
 
     class FileSearchException : public std::exception {
       public:

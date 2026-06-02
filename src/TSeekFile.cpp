@@ -8,7 +8,7 @@ File::File(std::string_view path, const SearchParams& params, bool delayedSearch
   }
 }
 
-void File::search() {
+File::DirectoryList File::search() {
 
   if(searchState == InProgress) {
     throw FileSearchException("Search is in progress");
@@ -18,11 +18,14 @@ void File::search() {
 
   searchState = InProgress;
 
+  DirectoryList foundDirectories;
   // File IO here
   // Do we need to a conditional variable to notify thread manager?
 
   searchState = Complete;
   //lineFound to be set if line is found.
+
+  return foundDirectories;
 }
 
 bool File::isFound() const {

@@ -7,16 +7,16 @@
 
 namespace TSeek::DS {
   template <typename T>
-  class Queue {
+  class ConcurrentQueue {
   public:
-    Queue()                         = default;
-    ~Queue()                        = default;
+    ConcurrentQueue()                                   = default;
+    ~ConcurrentQueue()                                  = default;
     
     // Keep it simple and just remove these
-    Queue(const Queue&)             = delete;
-    Queue(Queue&&)                  = delete;
-    Queue& operator=(const Queue&)  = delete;
-    Queue& operator=(Queue&&)       = delete;
+    ConcurrentQueue(const ConcurrentQueue&)             = delete;
+    ConcurrentQueue(ConcurrentQueue&&)                  = delete;
+    ConcurrentQueue& operator=(const ConcurrentQueue&)  = delete;
+    ConcurrentQueue& operator=(ConcurrentQueue&&)       = delete;
 
     std::size_t size() const { return m_queue.size(); }
     bool empty() const       { return size() == 0uz; }
