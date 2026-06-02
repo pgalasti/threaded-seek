@@ -2,7 +2,7 @@
 
 using namespace TSeek;
 
-std::list<std::string> EngineV1::search() {
+Engine::ResultList EngineV1::search() {
 
   std::list<std::string> results;
 
