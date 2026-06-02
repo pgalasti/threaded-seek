@@ -1,6 +1,7 @@
 #ifndef T_SEEK_FILE_H
 #define T_SEEK_FILE_H
 
+
 #include <string_view>
 #include <string>
 #include <exception>
@@ -23,7 +24,8 @@ namespace TSeek {
     ~File() = default;
 
     bool isFound() const;
-    
+    friend class EngineV1;
+
   private:
     using DirectoryList = std::list<std::string>;
 
